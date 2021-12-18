@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'the-pm-door';
-  jobs = [1,2,3,4,5,6]
 }
