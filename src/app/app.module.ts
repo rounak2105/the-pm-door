@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import { HttpClientModule } from "@angular/common/http";
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'jobs', component: JobsComponent },
@@ -23,6 +25,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

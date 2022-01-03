@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-jobs',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobsComponent implements OnInit {
   
-  jobs = [1,2,3,4,5,6, 7, 8, 9, 10, 1,2,3,4,5,6, 7, 8, 9, 10, 1,2,3,4,5,6, 7, 8, 9, 10, 1,2,3,4,5,6, 7, 8, 9, 10, 1,2,3,4,5,6, 7, 8, 9, 10]
+  jobs = []
 
-  constructor() { }
-
+  constructor(private apiService: ApiService) {
+    this.apiService = apiService;
+    this.apiService.getJobListing().subscribe((response: any) => {
+      this.jobs = response;
+    });
+  }
+  
   ngOnInit(): void {
   }
 
